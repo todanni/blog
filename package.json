@@ -9,6 +9,7 @@
     "@wooorm/starry-night": "^1.3.1",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
+    "hast-to-hyperscript": "^10.0.1",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
