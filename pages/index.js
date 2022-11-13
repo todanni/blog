@@ -9,14 +9,6 @@ import { toH } from "hast-to-hyperscript";
 import React, { useEffect, useState } from "react";
 
 export default function Home({ allPostsData }) {
-  const [highlightedCode, setHighlightedCode] = useState();
-
-  useEffect(() => {
-    highlight('"use strict";', "source.js").then((node) =>
-      setHighlightedCode(node)
-    );
-  }, []);
-
   return (
     <Layout home>
       <Head>
@@ -39,7 +31,6 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-      <section>{highlightedCode}</section>
     </Layout>
   );
 }
@@ -51,13 +42,4 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
-}
-
-async function highlight(code, scope) {
-  const starryNight = await createStarryNight(common);
-
-  const tree = starryNight.highlight(code, scope);
-  const reactNode = toH(React.createElement, tree);
-
-  return reactNode;
 }
