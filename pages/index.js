@@ -12,7 +12,9 @@ export default function Home({ allPostsData }) {
   const [highlightedCode, setHighlightedCode] = useState();
 
   useEffect(() => {
-    highlight().then((node) => setHighlightedCode(node));
+    highlight('"use strict";', "source.js").then((node) =>
+      setHighlightedCode(node)
+    );
   }, []);
 
   return (
@@ -51,12 +53,11 @@ export async function getStaticProps() {
   };
 }
 
-async function highlight() {
+async function highlight(code, scope) {
   const starryNight = await createStarryNight(common);
 
-  const tree = starryNight.highlight('"use strict";', "source.js");
+  const tree = starryNight.highlight(code, scope);
   const reactNode = toH(React.createElement, tree);
 
-  console.log(reactNode);
   return reactNode;
 }
