@@ -1,6 +1,7 @@
 ---
 title: 'Two Forms of Pre-rendering'
 date: '2022-01-01'
+syntax: go
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
@@ -20,4 +21,14 @@ export async function getStaticProps() {
   }
 }
 
+```
+
+```go
+// Parse the body of the request to get the email of the invited user
+var requestBody models.DashboardCreateRequest
+err = json.NewDecoder(r.Body).Decode(&requestBody)
+if err != nil {
+    http.Error(w, err.Error(), http.StatusBadRequest)
+    return
+}
 ```

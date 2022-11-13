@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
 const name = 'Danni Popova'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'ToDanni Blog'
 
 export default function Layout({ children, home }) {
   return (
@@ -25,18 +25,18 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
       <header className={styles.header}>
         {home ? (
           <>
             <Image
               priority
-              src="/images/profile.png"
+              src="/images/logo_transparent_background.png"
               className={utilStyles.borderCircle}
               height={144}
-              width={144}
+              width={500}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
@@ -58,7 +58,9 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
+
       <main>{children}</main>
+
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
