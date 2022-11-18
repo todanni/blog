@@ -1,15 +1,30 @@
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
-}
-
-.header {
+.layout{
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.backToHome {
-  margin: 3rem 0 0;
+.navlist{
+  display: flex;
+  gap: 1rem;
+
+  justify-content: flex-end;
+  margin-right: 1rem;
+
+  list-style: none;
+}
+
+.logo {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.posts{
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+}
+
+.posts > * {
+  flex-basis: 100%;
 }

@@ -1,6 +1,6 @@
 ---
-title: 'Two Forms of Pre-rendering'
-date: '2022-01-01'
+title: 'Using Vault to secure your GitHub workflows'
+date: '2022-11-01'
 syntax: go
 ---
 
